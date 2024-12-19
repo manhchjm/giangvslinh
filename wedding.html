@@ -8707,7 +8707,7 @@
                     <div id="w-yaczvklw" class="com-button p-absolute cursor-pointer animation">
                         <div class="button-css full-height full-width">
                             <span class="button-loader">
-                            </span><div class="button-text full-width u-select-none" data-toggle="modal" data-target="#myModal">XÁC NHẬN THAM DỰ</div>
+                            </span><div class="button-text full-width u-select-none"  data-toggle="modal" data-target="#myModal">XÁC NHẬN THAM DỰ</div>
                         </div>
                     </div>
 
@@ -8733,7 +8733,7 @@
                     </div><div id="w-at5hstgi" class="com-text-block p-absolute animation">
                         <div class="text-block"><h2 class="text-block-css full-width">THỨ 7 | 10H30<br></h2></div>
                     </div><div id="w-aiy0x8bf" class="com-button p-absolute cursor-pointer animation">
-                        <div class="button-css full-height full-width"><span class="button-loader"></span><div class="button-text full-width u-select-none" data-toggle="modal" data-target="#myModal">XÁC NHẬN THAM DỰ</div></div>
+                        <div class="button-css full-height full-width"><span class="button-loader"></span><div class="button-text full-width u-select-none"  data-toggle="modal" data-target="#myModal">XÁC NHẬN THAM DỰ</div></div>
                     </div>
                     <div id="w-2mm9wwrz" class="com-text-block p-absolute animation">
                         <div class="text-block">
@@ -8741,7 +8741,7 @@
                         </div>
                     </div><div id="w-0i9c6dr8" class="com-text-block p-absolute animation"><div class="text-block"><p class="text-block-css full-width">Tại Tư Gia Nhà Gái</p></div></div>
                     <div id="w-jjzx7sxz" class="p-absolute"><div class="line-css full-width"><div class="line-container"></div></div></div><div id="w-bijuqi6k" class="com-button p-absolute cursor-pointer animation">
-                        <div class="button-css full-height full-width"><span class="button-loader"></span><div class="button-text full-width u-select-none" data-toggle="modal" data-target="#myModal">XÁC NHẬN THAM DỰ</div></div>
+                        <div class="button-css full-height full-width"><span class="button-loader"></span><div class="button-text full-width u-select-none"  data-toggle="modal" data-target="#myModal">XÁC NHẬN THAM DỰ</div></div>
                     </div>
                 </div>
             </div>
@@ -8928,12 +8928,12 @@
                 </div>
                 <div class="modal-body">
                     <input type="text" class="form-control" placeholder="Tên của bạn" id="usr" style=" margin-bottom: 10px;">
-                    <input type="text" class="form-control" placeholder="SĐT của bạn" id="usr" style=" margin-bottom: 10px;">
+                    <input type="text" class="form-control" placeholder="SĐT của bạn" id="phone" style=" margin-bottom: 10px;">
                     <input type="text" class="form-control" placeholder="Bạn là gì của Dâu Rể nhỉ?" id="type" style=" margin-bottom: 10px;">
                     <input type="text" class="form-control" placeholder="Gửi lời chúc dến Dâu rể nhé!" id="content" style=" margin-bottom: 10px;">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" style=" font-weight: bold; display: block; text-align: center; border-color: rgba(229, 231, 235, 1); border-style: solid; color: rgba(0, 0, 0, 1); font-family: 'Ephesis-Regular.ttf', sans-serif; font-size: 29px; text-align: center;" data-dismiss="modal">Gửi</button>
+                    <button type="button" onclick="myFunction()" class="btn btn-default" style=" font-weight: bold; display: block; text-align: center; border-color: rgba(229, 231, 235, 1); border-style: solid; color: rgba(0, 0, 0, 1); font-family: 'Ephesis-Regular.ttf', sans-serif; font-size: 29px; text-align: center;" data-dismiss="modal">Gửi</button>
                 </div>
             </div>
 
@@ -8956,7 +8956,7 @@
 
     <script>
         // Custom load for botcake ref
-        ; (function () {
+        (function () {
             const params = new URLSearchParams(window.location.search)
             const botcake_ref = params.get('botcake_ref')
             if (botcake_ref) {
@@ -8978,6 +8978,32 @@
 
 
     <span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span>
+
+    <script>
+        function myFunction() {
+            var form = new FormData();
+            form.append("data", "43434");
+
+            var object = { ten: $('#usr').val(), phone: $('#phone').val(), type: $('#type').val(), content: $('#content').val() }
+            debugger;
+            var settings = {
+                "url": "https://demoebh.lpbi.com.vn/thiepcuoi/YourAction?data=" + JSON.stringify(object),
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Content-Type": "text/xml; charset=utf-8"
+                },
+                "processData": false,
+                "mimeType": "multipart/form-data",
+                "contentType": false,
+                "data": form
+            };
+
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+            });
+        }
+    </script>
     <script>
         document.getElementById('123').play()
         try {
